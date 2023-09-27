@@ -1,5 +1,7 @@
 import React from 'react';
 import CartWidget from './carrito';
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
   return (
@@ -11,16 +13,25 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <a className="nav-link" href="../index.html">Inicio</a>
-              <a className="nav-link" href="#">Catalogo</a>
-              <a className="nav-link" href="contacto.html">Contacto</a>
-              <a className="nav-link" href="acerca_de.html">Acerca De</a>
-              <a className="nav-link" href="vision.html">Equipo</a>
-            </div>
-            <a className="nav-link" href="checkout.html">
+          <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/start">Inicio</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/carro">Productos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Servicios</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Contacto</Link>
+            </li>
+            <li className="nav-item">
               <CartWidget />
-            </a>
+            </li>
+          </ul>
+        </div>
           </div>
         </div>
       </nav>
